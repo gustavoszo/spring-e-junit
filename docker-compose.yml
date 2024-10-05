@@ -18,10 +18,10 @@ services:
   # demo = aplicacao Spring Boot
   demo:
     # Arrumar isso
-    image: gustavoszo/demo
+    # image: gustavoszo/demo
     restart: always
     # Opção de build para a img
-    # build: ./demo
+    build: ./demo
     environment:
       SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/people?useSSL=false&allowPublicKeyRetrieval=true&serverTimeZone=America/Sao_Paulo
       SPRING.DATASOURCE.USERNAME: root
