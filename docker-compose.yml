@@ -17,8 +17,7 @@ services:
 
   # demo = aplicacao Spring Boot
   demo:
-    # Arrumar isso
-    # image: gustavoszo/demo
+    image: gustavoszo/demo
     restart: always
     # Opção de build para a img
     build: ./demo
