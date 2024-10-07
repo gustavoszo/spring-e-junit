@@ -38,7 +38,6 @@ jobs:
       run: docker compose build
 
     - name: Push to Docker Hub
-      run: 
-        # Variavel de ambiente do Github Actions
-        docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
+      run: |
+       docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
+       docker push ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
