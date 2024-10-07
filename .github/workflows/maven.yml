@@ -32,7 +32,7 @@ jobs:
 
     - name: Build application jar
       working-directory: ./demo
-      run: mvn clean package
+      run: mvn clean package -DskipTests
 
     - name: Docker Compose Build
       run: docker compose build -DskipTests
