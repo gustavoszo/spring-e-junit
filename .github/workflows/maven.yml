@@ -35,7 +35,7 @@ jobs:
       run: mvn clean package
 
     - name: Docker Compose Build
-      run: docker compose build
+      run: docker compose build -DskipTests
 
     - name: Push to Docker Hub
       run: 
