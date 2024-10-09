@@ -58,3 +58,14 @@ jobs:
        docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
        docker push ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
 
+    - name: Azure Login
+      uses: Azure/login@v2.2.0
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'person-api'
+        images: '${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}'
+    
