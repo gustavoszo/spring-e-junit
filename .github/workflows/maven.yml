@@ -44,6 +44,14 @@ jobs:
         password: ${{ secrets.AZURE_DOCKER_PASSWORD }}
         # Container registry server url
         login-server: ${{ secrets.AZURE_CONTAINER_REGISTRY }}
+
+    - name: Push Image to Azure Container Registry
+      run: |
+        docker tag ${{ secrets.DOCKER_IMAGE }}:latest ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:latest
+        docker push ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:latest
+        
+        docker tag ${{ secrets.DOCKER_IMAGE }}:latest ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
+        docker push ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
           
     - name: Push to Docker Hub
       run: |
