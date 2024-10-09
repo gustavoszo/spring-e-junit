@@ -37,6 +37,14 @@ jobs:
     - name: Docker Compose Build
       run: docker compose build
 
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        username: ${{ secrets.AZURE_DOCKER_USERNAME }}
+        password: ${{ secrets.AZURE_DOCKER_PASSWORD }}
+        # Container registry server url
+        login-server: ${{ secrets.AZURE_CONTAINER_REGISTRY }}
+          
     - name: Push to Docker Hub
       run: |
        docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
