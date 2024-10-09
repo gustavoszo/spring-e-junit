@@ -17,7 +17,7 @@ public class OpenApiConfig {
             .info(
                 new Info()
                     .title("REST API - People")
-                    .description("API para pratica de testes unitários com Junit")
+                    .description("API para pratica de testes unitários com Junit - CI and CD")
                     .version("v1")
                     .license(new License().name("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0"))
                     .contact(new Contact().name("Gustavo de Souza").email("gustavo@spring-park.com"))
