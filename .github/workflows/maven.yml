@@ -52,6 +52,9 @@ jobs:
           
     - name: Push Image to Azure Container Registry
       run: |
-       docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
-       docker push ${{ secrets.DOCKER_USERNAME }}/demo:${{ github.run_id }}
+       docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:latest
+       docker push ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:latest
+
+       docker tag ${{ secrets.DOCKER_USERNAME }}/demo:latest ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
+       docker push ${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}
 
