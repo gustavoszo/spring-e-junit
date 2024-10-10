@@ -67,5 +67,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'person-api'
-        images: '${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:${{ github.run_id }}'
+        images: '${{ secrets.AZURE_CONTAINER_REGISTRY }}/demo:latest'
     
