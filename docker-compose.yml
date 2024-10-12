@@ -21,10 +21,10 @@ services:
     restart: always
     # Opção de build para a img
     build: ./demo
-    environment:
-      SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/people?useSSL=false&allowPublicKeyRetrieval=true&serverTimeZone=America/Sao_Paulo
-      SPRING.DATASOURCE.USERNAME: root
-      SPRING.DATASOURCE.PASSWORD: root
+    # environment:
+    #   SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/people?useSSL=false&allowPublicKeyRetrieval=true&serverTimeZone=America/Sao_Paulo
+    #   SPRING.DATASOURCE.USERNAME: root
+    #   SPRING.DATASOURCE.PASSWORD: root
     ports:
       - 80:80
     depends_on:
